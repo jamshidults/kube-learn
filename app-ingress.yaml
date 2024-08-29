@@ -7,7 +7,7 @@ metadata:
 
 spec:
   rules:
-    - host: "synchat.internal"
+    - host: synchat.internal
       http:
         paths:
           - path: /
