@@ -20,6 +20,10 @@ spec:
           emptyDir: {}
       containers:
       - name: synergychat-crawler-1
+        resources:
+          limits:
+            memory: "12Mi"
+            cpu: "50m"
         image: bootdotdev/synergychat-crawler:latest
         envFrom:
           - configMapRef:
@@ -31,6 +35,10 @@ spec:
         
       - name: synergychat-crawler-2
         image: bootdotdev/synergychat-crawler:latest
+        resources:
+          limits:
+            memory: "12Mi"
+            cpu: "50m"
         volumeMounts:
           - name: cache-volume
             mountPath: /cache
@@ -52,6 +60,10 @@ spec:
               key: CRAWLER_DB_PATH
       - name: synergychat-crawler-3
         image: bootdotdev/synergychat-crawler:latest
+        resources:
+          limits:
+            memory: "12Mi"
+            cpu: "50m"
         volumeMounts:
           - name: cache-volume
             mountPath: /cache

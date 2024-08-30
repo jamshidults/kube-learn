@@ -20,6 +20,10 @@ spec:
           claimName: synergychat-api-pvc
       containers:
       - name: synergychat-api
+        resources:
+          limits:
+            memory: "12Mi"
+            cpu: "50m"
         volumeMounts:
         - name: synergychat-api-volume
           mountPath: /persist
